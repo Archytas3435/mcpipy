@@ -13,7 +13,12 @@ def get_blocks(x0, y0, z0, x1, y1, z1):
     return mc.getBlocks(x0, y0, z0, x1, y1, z1, block_type)
 
 def start():
-    change_blocks(400, -10, 600, 420, 10, 620, block.AIR)
+    change_blocks(400, 0, 600, 400, 10, 620, block.QUARTZ)
+    change_blocks(400, 0, 600, 420, 0, 620, block.QUARTZ)
+    change_blocks(400, 0, 600, 420, 10, 600, block.QUARTZ)
+    change_blocks(420, 0, 600, 420, 10, 620, block.QUARTZ)
+    change_blocks(400, 0, 620, 420, 10, 620, block.QUARTZ)
+    change_blocks(420, 0, 600, 420, 10, 620, block.QUARTZ)
     teleport(410, 0, 610)
 
 start()
