@@ -43,11 +43,4 @@ def start():
         change_blocks(start_x, start_y, start_z+i, end_x, start_y, start_z+i, stripe_block)
     teleport((start_x+end_x)//2, (start_y+end_y)//2, (start_z+end_z)//2)
 
-def parse():
-    for i in range(0, end_z-start_z, 2):
-        blocks = get_blocks(start_x+1, start_y+1, start_z+i, end_x-1, start_y+1, start_z+i)
-        print(blocks)
-
 start()
-parse()
-
