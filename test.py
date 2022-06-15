@@ -13,12 +13,14 @@ def change_blocks(x0, y0, z0, x1, y1, z1, block_type):
 def get_blocks(x0, y0, z0, x1, y1, z1):
     return mc.getBlocks(x0, y0, z0, x1, y1, z1, block_type)
 
-border_block = block.Block(35, 0)
-stripe_block = block.Block(41)
+air_block = block.Block(0)
+border_block = block.Block(82, 0)
+stripe_block = block.Block(82, 14)
 start_x, end_x = 400, 420
 start_y, end_y = 0, 10
-start_z, end_z = 600, 620
+start_z, end_z = 600, 615
 def start():
+    change_blocks(start_x, start_y, start_z, end_x, end_y, end_z, air_block)
     change_blocks(start_x, start_y, start_z, start_x, end_y, end_z, border_block)
     change_blocks(start_x, start_y, start_z, end_x, start_y, end_z, border_block)
     change_blocks(start_x, start_y, start_z, end_x, end_y, start_z, border_block)
