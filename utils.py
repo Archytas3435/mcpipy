@@ -27,4 +27,4 @@ qubit_75_block = block.Block(35, 8)
 qubit_100_block = block.Block(35, 9)
 start_x, end_x = 400, 420
 start_y, end_y = 0, 10
-start_z, end_z = 600, 615
+start_z, end_z = 600, 616
