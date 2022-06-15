@@ -3,6 +3,6 @@ from mcpi import block
 
 mc = Minecraft.create()
 print("a")
-mc.player.setPos(1600, 10, -400)
-mc.setBlocks(1600, 10, -400, 1605, 12, -398, block.OBSIDIAN)
+mc.player.setPos(1600, 8, -400)
+mc.setBlocks(1600, 10, -400, 1602, 12, -398, block.OBSIDIAN)
 
