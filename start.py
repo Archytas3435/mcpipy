@@ -9,7 +9,7 @@ def start():
     change_blocks(MC, end_x, start_y, start_z, end_x, end_y, end_z, border_block)
     change_blocks(MC, start_x, start_y, end_z, end_x, end_y, end_z, border_block)
     change_blocks(MC, end_x, start_y, start_z, end_x, end_y, end_z, border_block)
-    for i in range(0, end_z-start_z, 2):
+    for i in range(1, end_z-start_z, 2):
         change_blocks(MC, start_x, start_y, start_z+i, end_x, start_y, start_z+i, stripe_block)
     teleport(MC, (start_x+end_x)//2, (start_y+end_y)//2, (start_z+end_z)//2)
 
