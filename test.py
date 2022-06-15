@@ -1,6 +1,5 @@
-from mcpi import minecraft
+from mcpi.minecraft import Minecraft
 
-mc = minecraft.Minecraft.create()
 mc = Minecraft.create()
 print("a")
 for x in range(1602, 1611):
