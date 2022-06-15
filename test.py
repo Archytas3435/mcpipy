@@ -14,6 +14,7 @@ def get_blocks(x0, y0, z0, x1, y1, z1):
     return mc.getBlocks(x0, y0, z0, x1, y1, z1, block_type)
 
 block = block.Block(35, 0)
+stripe = block.Block(41)
 start_x, end_x = 400, 420
 start_y, end_y = 0, 10
 start_z, end_z = 600, 620
