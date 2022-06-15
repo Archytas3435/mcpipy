@@ -10,7 +10,7 @@ def change_blocks(mc, x0, y0, z0, x1, y1, z1, block_type):
     mc.setBlocks(x0, y0, z0, x1, y1, z1, block_type)
 
 def get_blocks(mc, x0, y0, z0, x1, y1, z1):
-    return mc.getBlocks(x0, y0, z0, x1, y1, z1)
+    return list(mc.getBlocks(x0, y0, z0, x1, y1, z1))
 
 air_block = block.Block(0)
 border_block = block.Block(35, 0)
