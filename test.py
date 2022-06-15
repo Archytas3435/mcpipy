@@ -50,8 +50,8 @@ def parse():
 
 start()
 while True:
-    message = mc.events.pollChatPosts()[-1]
-    if "start" in message:
+    messages = mc.events.pollChatPosts()
+    if len(messages)>0 and "start" in messages[-1]:
         parse()
     sleep(0.1)
 
