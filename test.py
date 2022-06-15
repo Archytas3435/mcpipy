@@ -26,7 +26,7 @@ def start():
     change_blocks(end_x, start_y, start_z, end_x, end_y, end_z, block)
     for i in range(0, end_z-(start_z+1), 2):
         change_blocks(start_x, start_y, start_z+i, end_x, start_y, start_z+i, block)
-    teleport((start_x+end_x)//2, (start_y+end_y)//2, (start_y+end_y)//2)
+    teleport((start_x+end_x)//2, (start_y+end_y)//2, (start_z+end_z)//2)
 
 start()
 
