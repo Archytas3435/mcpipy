@@ -20,7 +20,7 @@ def start():
     change_blocks(420, 0, 600, 420, 10, 620, block)
     change_blocks(400, 0, 620, 420, 10, 620, block)
     change_blocks(420, 0, 600, 420, 10, 620, block)
-    teleport(410, 0, 610)
+    teleport(410, 5, 610)
 
 start()
 
