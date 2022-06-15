@@ -1,4 +1,7 @@
 from mcpi import block
+from mcpi.minecraft import Minecraft
+
+MC = Minecraft.create()
 
 def teleport(mc, x, y, z):
     mc.player.setPos(x, y, z)
