@@ -4,5 +4,5 @@ from mcpi import block
 mc = Minecraft.create()
 print("a")
 mc.player.setPos(1600, 8, -400)
-mc.setBlocks(1600, 10, -400, 1610, 12, -390, block.OBSIDIAN)
+mc.setBlocks(1600, 10, -400, 1650, 15, -360, block.CACTUS)
 
