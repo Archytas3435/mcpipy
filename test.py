@@ -1,8 +1,8 @@
 from mcpi.minecraft import Minecraft
+from mcpi import block
 
 mc = Minecraft.create()
 print("a")
-for x in range(1602, 1611):
-    for y in range(-5, 5):
-        for z in range(-348, -339):
-            mc.setBlock(x, y, z, 17)
+mc.setBlocks(1600, -10, -400, 1700, 10, -300, block.WOOD.id)
+            
+            
