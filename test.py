@@ -13,20 +13,20 @@ def change_blocks(x0, y0, z0, x1, y1, z1, block_type):
 def get_blocks(x0, y0, z0, x1, y1, z1):
     return mc.getBlocks(x0, y0, z0, x1, y1, z1, block_type)
 
-block = block.Block(35, 0)
-stripe = block.Block(41)
+border_block = block.Block(35, 0)
+stripe_block = block.Block(41)
 start_x, end_x = 400, 420
 start_y, end_y = 0, 10
 start_z, end_z = 600, 620
 def start():
-    change_blocks(start_x, start_y, start_z, start_x, end_y, end_z, block)
-    change_blocks(start_x, start_y, start_z, end_x, start_y, end_z, block)
-    change_blocks(start_x, start_y, start_z, end_x, end_y, start_z, block)
-    change_blocks(end_x, start_y, start_z, end_x, end_y, end_z, block)
-    change_blocks(start_x, start_y, end_z, end_x, end_y, end_z, block)
-    change_blocks(end_x, start_y, start_z, end_x, end_y, end_z, block)
+    change_blocks(start_x, start_y, start_z, start_x, end_y, end_z, border_block)
+    change_blocks(start_x, start_y, start_z, end_x, start_y, end_z, border_block)
+    change_blocks(start_x, start_y, start_z, end_x, end_y, start_z, border_block)
+    change_blocks(end_x, start_y, start_z, end_x, end_y, end_z, border_block)
+    change_blocks(start_x, start_y, end_z, end_x, end_y, end_z, border_block)
+    change_blocks(end_x, start_y, start_z, end_x, end_y, end_z, border_block)
     for i in range(0, end_z-(start_z+1), 2):
-        change_blocks(start_x, start_y, start_z+i, end_x, start_y, start_z+i, block)
+        change_blocks(start_x, start_y, start_z+i, end_x, start_y, start_z+i, stripe_block)
     teleport((start_x+end_x)//2, (start_y+end_y)//2, (start_z+end_z)//2)
 
 start()
