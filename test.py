@@ -1,5 +1,4 @@
-from mcpi.minecraft import minecraft
-from mcpi.minecraft import Minecraft
+from mcpi import minecraft
 
 mc = minecraft.Minecraft.create()
 mc = Minecraft.create()
