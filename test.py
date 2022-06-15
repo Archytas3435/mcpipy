@@ -39,19 +39,15 @@ def start():
     change_blocks(end_x, start_y, start_z, end_x, end_y, end_z, border_block)
     change_blocks(start_x, start_y, end_z, end_x, end_y, end_z, border_block)
     change_blocks(end_x, start_y, start_z, end_x, end_y, end_z, border_block)
-    for i in range(0, end_z-(start_z+1), 2):
+    for i in range(0, end_z-start_z, 2):
         change_blocks(start_x, start_y, start_z+i, end_x, start_y, start_z+i, stripe_block)
     teleport((start_x+end_x)//2, (start_y+end_y)//2, (start_z+end_z)//2)
 
 def parse():
-    for i in range(0, end_z-(start_z+1), 2):
+    for i in range(0, end_z-start_z, 2):
         blocks = get_blocks(start_x+1, start_y+1, start_z+i, end_x-1, start_y+1, start_z+i)
         print(blocks)
 
 start()
-while True:
-    messages = mc.events.pollChatPosts()
-    if len(messages)>0 and "start" in messages[-1].message:
-        parse()
-    sleep(0.1)
+parse()
 
