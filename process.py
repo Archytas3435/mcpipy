@@ -4,6 +4,7 @@ from utils import *
 import numpy as np
 from matplotlib import pyplot as plt
 from math import sqrt
+from datetime import datetime
 
 def process():
     current_state = parse()
@@ -56,6 +57,10 @@ def process():
     counts = sim.run(qobj).result().get_counts()
 
     print(counts)
-    qc.draw("mpl").savefig("")
+    time = datetime.now().strftime("%y-%m-%d-%H-%M-%S")
+    qc.draw("mpl").savefig(f"{time}.png")
+    s3 = boto3.client('s3')
+    with open(f"{time}.png", "rb") as f:
+        s3.upload_fileobj(f, bucket_name)
                 
 process()
