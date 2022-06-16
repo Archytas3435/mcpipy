@@ -1,0 +1,8 @@
+java.net.preferIPv4Stack=true
+Option           Description                    
+------           -----------                    
+--extract        Extract the contained jar file 
+-h, --help       Help with this installer       
+--installServer  Install a server to the current
+                   directory                    
+--offline        Don't attempt any network calls
