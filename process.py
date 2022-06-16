@@ -24,7 +24,7 @@ def process():
                     if qubit2 in row[row.index(qubit)+1:]:
                         print("Multiple qubits in register")
                         return None
-                qc.initialize(qubit_val_vecs[qubit], row2)            
+                qc.initialize(qubit_val_vecs[qubits.index(qubit)], row2)            
 
     for step in range(len(current_state[0])):
         for row in range(len(current_state)):
