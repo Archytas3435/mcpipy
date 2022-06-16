@@ -42,7 +42,7 @@ def process():
             elif element == cnot_start_block.id:
                 a = False
                 for row2 in range(len(current_state)):
-                    if currentstate[row2][step] == cnot_end_block.id:
+                    if current_state[row2][step] == cnot_end_block.id:
                         qc.cnot(row, row2)
                         a = True
                         break
