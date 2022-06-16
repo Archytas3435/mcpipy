@@ -49,3 +49,4 @@ def process():
     print(counts)
     # fig = qc.draw("mpl")
                 
+process()
