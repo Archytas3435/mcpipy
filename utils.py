@@ -16,13 +16,15 @@ def get_blocks(mc, x0, y0, z0, x1, y1, z1):
 def upload_file(file_name, bucket, object_name=None):
     if object_name is None:
         object_name = os.path.basename(file_name)
-    s3_client = boto3.client('s3')
+    s3_client = boto3.client("s3")
     try:
         response = s3_client.upload_file(file_name, bucket, object_name)
     except ClientError as e:
         logging.error(e)
         return False
     return True
+
+bucket_name = "quantum-circuit-images"
 
 air_block = block.Block(0)
 border_block = block.Block(35, 0)
