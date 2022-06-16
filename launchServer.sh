@@ -1,0 +1,1 @@
+java -Xmx3500M -Xms3500M -jar server.jar nogui

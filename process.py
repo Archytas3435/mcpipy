@@ -56,9 +56,15 @@ def process():
     sim = Aer.get_backend("aer_simulator")
     counts = sim.run(qobj).result().get_counts()
 
-    print(counts)
+    keys = sorted(list(counts.keys()))
+    print(f"Total trials: {sum(counts[key] for key in keys)}")
+    for key in keys:
+        print(f"{key}: {counts[key]}")
+    print()
     time = datetime.now().strftime("%y-%m-%d-%H-%M-%S")
     qc.draw("mpl").savefig(f"{time}.png")
     upload_file(f"{time}.png")
+    url = f"https://quantum-circuit-images.s3.amazonaws.com/{time}.png"
+    print(url)
                 
 process()
