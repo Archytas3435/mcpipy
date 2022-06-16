@@ -11,8 +11,9 @@ def process():
     qubits = [qubit_0_block.id, qubit_25_block.id, qubit_50_block.id, qubit_75_block.id, qubit_100_block.id]
     qubit_vals = [0, .25, .50, .75, 1]
     
-    for row in current_state:
+    for row2 in range(len(current_state)):
         for qubit in qubits:
+            row = current_state[row2]
             if qubit in row:
                 row = list(row)
                 if sum(row[:row.index(qubit)]) > 0:
@@ -23,7 +24,7 @@ def process():
                         print("Multiple qubits in register")
                         return None
                 if np.random.random() < qubit_vals[qubits.index(qubit)]:
-                    qc.x(row)
+                    qc.x(row2)
                     break                
 
     for step in range(len(current_state[0])):
