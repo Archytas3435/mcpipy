@@ -5,6 +5,9 @@ import numpy as np
 from matplotlib import pyplot as plt
 from math import sqrt
 from datetime import datetime
+import os
+import matplotlib
+matplotlib.use("Agg")
 
 def process():
     current_state = parse()
@@ -60,5 +63,6 @@ def process():
     time = datetime.now().strftime("%y-%m-%d-%H-%M-%S")
     qc.draw("mpl").savefig(f"{time}.png")
     upload_file(f"{time}.png")
+    os.remove(f"{time}.png")
                 
 process()
