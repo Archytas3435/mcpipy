@@ -7,15 +7,24 @@ from matplotlib import pyplot as plt
 def process():
     current_state = parse()
 
-    qc = QuantumCircuit((current_state==qubit_0_block.id).sum()+(current_state==qubit_25_block.id).sum()+(current_state==qubit_50_block.id).sum()+(current_state==qubit_75_block.id).sum()+(current_state==qubit_100_block.id).sum(), 1)
-
+    qc = QuantumCircuit((current_state==qubit_0_block.id).sum()+(current_state==qubit_25_block.id).sum()+(current_state==qubit_50_block.id).sum()+(current_state==qubit_75_block.id).sum()+(current_state==qubit_100_block.id).sum(), 2)
+    qubits = [qubit_0_block.id, qubit_25_block.id, qubit_50_block.id, qubit_75_block.id, qubit_100_block.id]
+    qubit_vals = [0, .25, .50, .75, 1]
+    
     for row in current_state:
-        for qubit in [qubit_0_block.id, qubit_25_block.id, qubit_50_block.id, qubit_75_block.id, qubit_100_block.id]:
+        for qubit in qubits:
             if qubit in row:
                 row = list(row)
                 if sum(row[:row.index(qubit)]) > 0:
                     print("Qubit not first element in row")
                     return None
+                for qubit2 in qubits:
+                    if qubit2 in row[row.index(qubit)+1:]:
+                        print("Multiple qubits in register")
+                        return None
+                if np.random.random() < qubit_vals[qubits.index(qubit)]:
+                    qc.x(row)
+                    break                
 
     for step in range(len(current_state[0])):
         for row in range(len(current_state)):
@@ -40,7 +49,7 @@ def process():
                 if a == False:
                     print("No output for cx at appropriate timestep")
             elif element == measure_block.id:
-                qc.measure(row, 0)
+                qc.measure(row, [0, 1])
 
     qobj = assemble(qc)
     sim = Aer.get_backend("aer_simulator")
