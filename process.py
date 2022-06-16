@@ -3,13 +3,14 @@ from parse import parse
 from utils import *
 import numpy as np
 from matplotlib import pyplot as plt
+from math import sqrt
 
 def process():
     current_state = parse()
 
     qc = QuantumCircuit((current_state==qubit_0_block.id).sum()+(current_state==qubit_25_block.id).sum()+(current_state==qubit_50_block.id).sum()+(current_state==qubit_75_block.id).sum()+(current_state==qubit_100_block.id).sum(), 1)
     qubits = [qubit_0_block.id, qubit_25_block.id, qubit_50_block.id, qubit_75_block.id, qubit_100_block.id]
-    qubit_vals = [0, .25, .50, .75, 1]
+    qubit_val_vecs = [[1, 0], [sqrt(3)/2, 1/2], [1/sqrt(2), 1/sqrt(2)], [1/2, sqrt(3)/2], [0, 1]]
     
     for row2 in range(len(current_state)):
         for qubit in qubits:
@@ -23,9 +24,7 @@ def process():
                     if qubit2 in row[row.index(qubit)+1:]:
                         print("Multiple qubits in register")
                         return None
-                if np.random.random() < qubit_vals[qubits.index(qubit)]:
-                    qc.x(row2)
-                    break                
+                qc.initialize(qubit_val_vecs[qubit], row2)            
 
     for step in range(len(current_state[0])):
         for row in range(len(current_state)):
