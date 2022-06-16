@@ -59,8 +59,6 @@ def process():
     print(counts)
     time = datetime.now().strftime("%y-%m-%d-%H-%M-%S")
     qc.draw("mpl").savefig(f"{time}.png")
-    s3 = session.resource('s3')
-    with open(f"{time}.png", "rb") as f:
-        s3.upload_fileobj(f, bucket_name)
+    upload_file(f"{time}.png")
                 
 process()
