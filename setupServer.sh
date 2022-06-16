@@ -20,4 +20,7 @@ python --versio
 
 pip install -r requirements.txt
 
+sudo ufw allow 25565/tcp
+
+
 

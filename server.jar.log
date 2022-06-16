@@ -1,56 +1,8 @@
 java.net.preferIPv4Stack=true
-Considering minecraft server jar
-Downloading minecraft server version 1.8
-  ETag: 5b19d1a562a8a7c5f9a787ad96c8148b
-  MD5:  5b19d1a562a8a7c5f9a787ad96c8148b
-Considering library net.minecraftforge:forge:1.8-11.14.4.1563: Not Downloading {Wrong Side}
-Considering library io.netty:netty-all:4.0.15.Final
-Downloading library io.netty:netty-all:4.0.15.Final
-Trying unpacked library io.netty:netty-all:4.0.15.Final
-Considering library net.minecraft:launchwrapper:1.12
-Downloading library net.minecraft:launchwrapper:1.12
-Trying unpacked library net.minecraft:launchwrapper:1.12
-Considering library org.ow2.asm:asm-all:5.0.3
-Downloading library org.ow2.asm:asm-all:5.0.3
-Trying unpacked library org.ow2.asm:asm-all:5.0.3
-Considering library com.typesafe.akka:akka-actor_2.11:2.3.3
-Downloading library com.typesafe.akka:akka-actor_2.11:2.3.3
-Trying unpacked library com.typesafe.akka:akka-actor_2.11:2.3.3
-Considering library com.typesafe:config:1.2.1
-Downloading library com.typesafe:config:1.2.1
-Trying unpacked library com.typesafe:config:1.2.1
-Considering library org.scala-lang:scala-actors-migration_2.11:1.1.0
-Downloading library org.scala-lang:scala-actors-migration_2.11:1.1.0
-Trying unpacked library org.scala-lang:scala-actors-migration_2.11:1.1.0
-Considering library org.scala-lang:scala-compiler:2.11.1
-Downloading library org.scala-lang:scala-compiler:2.11.1
-Trying unpacked library org.scala-lang:scala-compiler:2.11.1
-Considering library org.scala-lang.plugins:scala-continuations-library_2.11:1.0.2
-Downloading library org.scala-lang.plugins:scala-continuations-library_2.11:1.0.2
-Trying unpacked library org.scala-lang.plugins:scala-continuations-library_2.11:1.0.2
-Considering library org.scala-lang.plugins:scala-continuations-plugin_2.11.1:1.0.2
-Downloading library org.scala-lang.plugins:scala-continuations-plugin_2.11.1:1.0.2
-Trying unpacked library org.scala-lang.plugins:scala-continuations-plugin_2.11.1:1.0.2
-Considering library org.scala-lang:scala-library:2.11.1
-Downloading library org.scala-lang:scala-library:2.11.1
-Trying unpacked library org.scala-lang:scala-library:2.11.1
-Considering library org.scala-lang:scala-parser-combinators_2.11:1.0.1
-Downloading library org.scala-lang:scala-parser-combinators_2.11:1.0.1
-Trying unpacked library org.scala-lang:scala-parser-combinators_2.11:1.0.1
-Considering library org.scala-lang:scala-reflect:2.11.1
-Downloading library org.scala-lang:scala-reflect:2.11.1
-Trying unpacked library org.scala-lang:scala-reflect:2.11.1
-Considering library org.scala-lang:scala-swing_2.11:1.0.1
-Downloading library org.scala-lang:scala-swing_2.11:1.0.1
-Trying unpacked library org.scala-lang:scala-swing_2.11:1.0.1
-Considering library org.scala-lang:scala-xml_2.11:1.0.2
-Downloading library org.scala-lang:scala-xml_2.11:1.0.2
-Trying unpacked library org.scala-lang:scala-xml_2.11:1.0.2
-Considering library lzma:lzma:0.0.1
-Downloading library lzma:lzma:0.0.1
-Trying unpacked library lzma:lzma:0.0.1
-Considering library net.sf.jopt-simple:jopt-simple:4.5
-Downloading library net.sf.jopt-simple:jopt-simple:4.5
-Trying unpacked library net.sf.jopt-simple:jopt-simple:4.5
-Extracting: /forge-1.8-11.14.4.1563-universal.jar
-To:          C:\Users\sarth\AppData\Roaming\.minecraft\mcpipy\forge-1.8-11.14.4.1563-universal.jar
+Option           Description                    
+------           -----------                    
+--extract        Extract the contained jar file 
+-h, --help       Help with this installer       
+--installServer  Install a server to the current
+                   directory                    
+--offline        Don't attempt any network calls
