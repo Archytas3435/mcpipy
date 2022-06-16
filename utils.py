@@ -14,7 +14,7 @@ def get_blocks(mc, x0, y0, z0, x1, y1, z1):
 
 air_block = block.Block(0)
 border_block = block.Block(35, 0)
-stripe_block = block.Block(1, 6)
+stripe_block = block.Block(35, 14)
 glow_block = block.Block(89)
 hadamard_block = block.Block(13)
 not_block = block.Block(14)
