@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 def process():
     current_state = parse()
 
-    qc = QuantumCircuit((current_state==qubit_0_block.id).sum()+(current_state==qubit_25_block.id).sum()+(current_state==qubit_50_block.id).sum()+(current_state==qubit_75_block.id).sum()+(current_state==qubit_100_block.id).sum(), 2)
+    qc = QuantumCircuit((current_state==qubit_0_block.id).sum()+(current_state==qubit_25_block.id).sum()+(current_state==qubit_50_block.id).sum()+(current_state==qubit_75_block.id).sum()+(current_state==qubit_100_block.id).sum(), 1)
     qubits = [qubit_0_block.id, qubit_25_block.id, qubit_50_block.id, qubit_75_block.id, qubit_100_block.id]
     qubit_vals = [0, .25, .50, .75, 1]
     
@@ -49,7 +49,7 @@ def process():
                 if a == False:
                     print("No output for cx at appropriate timestep")
             elif element == measure_block.id:
-                qc.measure(row, [0, 1])
+                qc.measure(row, 0)
 
     qobj = assemble(qc)
     sim = Aer.get_backend("aer_simulator")
