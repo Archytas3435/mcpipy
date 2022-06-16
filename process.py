@@ -5,6 +5,9 @@ import numpy as np
 from matplotlib import pyplot as plt
 from math import sqrt
 from datetime import datetime
+import os
+import matplotlib
+matplotlib.use("Agg")
 
 def process():
     current_state = parse()
@@ -66,5 +69,6 @@ def process():
     upload_file(f"{time}.png")
     url = f"https://quantum-circuit-images.s3.amazonaws.com/{time}.png"
     print(url)
+    os.remove(f"{time}.png")
                 
 process()
