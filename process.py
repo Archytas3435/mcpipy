@@ -56,6 +56,6 @@ def process():
     counts = sim.run(qobj).result().get_counts()
 
     print(counts)
-    # fig = qc.draw("mpl")
+    qc.draw("mpl").savefig("")
                 
 process()
