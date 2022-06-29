@@ -25,7 +25,7 @@ def lambda_handler(event, context):
         num_quantum_registers = current_state.shape[0]
         num_classical_registers = 1 # for now
         qc = QuantumCircuit(num_quantum_registers, num_classical_registers)
-        
+
         # TODO: add all gates in https://qiskit.org/documentation/apidoc/circuit_library.html
         single_register_gate_codes = {
             102: qc.h,
@@ -65,7 +65,7 @@ def lambda_handler(event, context):
                     if (element + 1) not in column:
                         raise Exception("End not found for multi-register gate")
                     else:
-                        double_register_gate_codes[element](row, column.where(element+1)[0][0])
+                        double_register_gate_codes[element](row, np.where(column == element+1)[0][0])
                 elif element == measure_gate_id:
                     qc.measure(row, 0) # 0 should change when more classical registers added
 
